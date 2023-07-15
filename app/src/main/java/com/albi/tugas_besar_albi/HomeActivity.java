@@ -33,9 +33,9 @@ public class HomeActivity extends AppCompatActivity {
 
                 Boolean checkinsertdata = DB.insertdatacatatan(namaTXT, catatanTXT, tglTXT);
                 if(checkinsertdata==true)
-                    Toast.makeText(HomeActivity.this, "New Entry Inserted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HomeActivity.this, "Data Berhasil Ditambahkan!", Toast.LENGTH_SHORT).show();
                 else
-                    Toast.makeText(HomeActivity.this, "New Entry Not Inserted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HomeActivity.this, "Data Gagal Ditambahkan!", Toast.LENGTH_SHORT).show();
             }        });
         update.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,9 +46,9 @@ public class HomeActivity extends AppCompatActivity {
 
                 Boolean checkupdatedata = DB.updatedatacatatan(nameTXT, contactTXT, tglTXT);
                 if(checkupdatedata==true)
-                    Toast.makeText(HomeActivity.this, "Entry Updated", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HomeActivity.this, "Data berhasil Update!", Toast.LENGTH_SHORT).show();
                 else
-                    Toast.makeText(HomeActivity.this, "New Entry Not Updated", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HomeActivity.this, "Data Gagal DiUpdate!", Toast.LENGTH_SHORT).show();
             }        });
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,9 +56,9 @@ public class HomeActivity extends AppCompatActivity {
                 String nameTXT = nama.getText().toString();
                 Boolean checkudeletedata = DB.deletedatacatatan(nameTXT);
                 if(checkudeletedata==true)
-                    Toast.makeText(HomeActivity.this, "Entry Deleted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HomeActivity.this, "Data Berhasil Terhapus!", Toast.LENGTH_SHORT).show();
                 else
-                    Toast.makeText(HomeActivity.this, "Entry Not Deleted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HomeActivity.this, "Data Gagal Terhapus!", Toast.LENGTH_SHORT).show();
             }        });
 
         view.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +66,7 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Cursor res = DB.getdata();
                 if(res.getCount()==0){
-                    Toast.makeText(HomeActivity.this, "No Entry Exists", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HomeActivity.this, "Tidak ada data!", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 StringBuffer buffer = new StringBuffer();
