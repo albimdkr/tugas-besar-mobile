@@ -16,7 +16,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private ArrayList nama, catatan, tgl;
 
 
-    public MyAdapter(Context contex, ArrayList nama, ArrayList catatan, ArrayList tanggal) {
+    public MyAdapter(Context contex, ArrayList nama, ArrayList catatan, ArrayList tgl) {
         this.contex = contex;
         this.nama = nama;
         this.catatan = catatan;
