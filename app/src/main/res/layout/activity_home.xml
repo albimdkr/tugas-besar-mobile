@@ -15,7 +15,7 @@
         android:layout_marginTop="20dp"/>
 
     <EditText
-        android:id="@+id/name"
+        android:id="@+id/nama"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nama"
@@ -24,24 +24,22 @@
         android:inputType="textPersonName"/>
 
     <EditText
-        android:id="@+id/dob"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Tanggal"
-        android:textSize="24dp"
-        android:layout_below="@+id/contact"
-        android:inputType="number"/>
-
-
-    <EditText
-        android:id="@+id/contact"
+        android:id="@+id/catatan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Catatan"
         android:textSize="24dp"
-        android:layout_below="@+id/name"
+        android:layout_below="@+id/nama"
         android:inputType="number"/>
-    
+
+    <EditText
+        android:id="@+id/tgl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tanggal"
+        android:textSize="24dp"
+        android:layout_below="@+id/catatan"
+        android:inputType="number"/>
 
     <Button
         android:id="@+id/btnInsert"
@@ -50,7 +48,7 @@
         android:textSize="24dp"
         android:text="Tambah"
         android:layout_marginTop="30dp"
-        android:layout_below="@id/dob"/>
+        android:layout_below="@id/tgl"/>
 
     <Button
         android:id="@+id/btnUpdate"
