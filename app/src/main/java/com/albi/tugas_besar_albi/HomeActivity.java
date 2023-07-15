@@ -1,6 +1,8 @@
 package com.albi.tugas_besar_albi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -63,23 +65,8 @@ public class HomeActivity extends AppCompatActivity {
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Cursor res = DB.getdata();
-                if(res.getCount()==0){
-                    Toast.makeText(HomeActivity.this, "Tidak ada data!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                StringBuffer buffer = new StringBuffer();
-                while(res.moveToNext()){
-                    buffer.append("Nama :"+res.getString(0)+"\n");
-                    buffer.append("Catatan :"+res.getString(1)+"\n");
-                    buffer.append("Tanggal :"+res.getString(2)+"\n\n");
-                }
-
-                AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
-                builder.setCancelable(true);
-                builder.setTitle("User Entries");
-                builder.setMessage(buffer.toString());
-                builder.show();
-            }});
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, listCatatanActivity.class));
+            }
+        });
     }}
